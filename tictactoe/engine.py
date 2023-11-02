@@ -18,7 +18,7 @@ class Engine:
         if len(available_moves) == board.size**2:
             return 0, random.choice(list(range(board.size**2)))
         if board.is_gameover() or depth >= self.level:
-            return self.evaluate_board(board, depth), None
+            return self.evaluate_board(board, depth)*(-1), None
 
         if ai_turn:
             max_eval = float('-inf')
